@@ -1,11 +1,4 @@
-- if @projects.empty?
-  .blank_slate
-    %p None yet, huh?
-    %h1
-      Why don't you
-      = succeed "?" do
-        %a{ :href => path("/new") } create your first project
-- else
+- if authorized?
   %ul#projects
     - @projects.each do |project|
       %li{ :class => cycle("even", "odd") + ' ' + project.status.to_s }
@@ -18,6 +11,12 @@
             Never built yet
           - else
             = project.human_status
-  - if authorized?
-    %p#new
-      %a{ :href => path("/new") } Add a new project
+  %p#new
+    %a{ :href => path("/new") } Add a new project
+- else
+  .blank_slate
+    %p None yet, huh?
+    %h1
+      Why don't you
+      = succeed "?" do
+        %a{ :href => path("/new") } create your first project
