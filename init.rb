@@ -8,6 +8,8 @@ Integrity.configure do |c|
   c.base_url  "http://myapp.heroku.com"
   c.log       "tmp/integrity.log"
   c.github    "SECRET"
+  c.user "bfengine"
+  c.pass "eroosio"
   c.build_all!
   c.builder :threaded, 5
 end
