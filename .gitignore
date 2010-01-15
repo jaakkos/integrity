@@ -21,3 +21,4 @@ builds
 *.pid
 tmp/**/*
 .DS_Store
+init.rb
