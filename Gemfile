@@ -20,17 +20,17 @@ gem "sinatra-url-for", :git => "git://github.com/emk/sinatra-url-for.git"
 
 # These are dependencies for the various notifiers. Uncomment as appropriate.
 # = Email
-# gem "sinatra-ditties"
+gem "sinatra-ditties"
 # = IRC
-# gem "shout-bot"
+gem "shout-bot"
 # = Campfire
-# gem "broach", :git => "git://github.com/Manfred/broach.git"
-# gem "nap", :git => "git://github.com/qrush/nap.git"
+gem "broach", :git => "git://github.com/Manfred/broach.git"
+gem "nap", :git => "git://github.com/qrush/nap.git"
 
 # = Dependencies for the :dj builder
-# gem "activerecord"
-# gem "sqlite3-ruby"
-# gem "delayed_job", :git => "git://github.com/tobi/delayed_job.git"
+gem "activerecord"
+gem "sqlite3-ruby"
+gem "delayed_job", :git => "git://github.com/tobi/delayed_job.git"
 # = Dependency for the :resque builder
 # gem "resque"
 

@@ -18,5 +18,6 @@
             Never built yet
           - else
             = project.human_status
-  %p#new
-    %a{ :href => path("/new") } Add a new project
+  - if authorized?
+    %p#new
+      %a{ :href => path("/new") } Add a new project
