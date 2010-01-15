@@ -1,22 +1,14 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "lib"))
-
-require "vendor/gems/environment"
+gem "data_objects", "= 0.10.0"
 require "integrity"
 
-# Uncomment as appropriate for the notifier you want to use
-# = Email
-# require "integrity/notifier/email"
-# = IRC
-# require "integrity/notifier/irc"
-# = Campfire
-# require "integrity/notifier/campfire"
-
 Integrity.configure do |c|
-  c.database     "sqlite3:integrity.db"
-  c.directory    "builds"
-  c.base_url     "http://ci.example.org"
-  c.log          "integrity.log"
-  c.github       "SECRET"
+  c.database  ENV["DATABASE_URL"]
+  c.directory "tmp"
+  c.base_url  "http://myapp.heroku.com"
+  c.log       "tmp/integrity.log"
+  c.github    "SECRET"
   c.build_all!
-  c.builder      :threaded, 5
+  c.builder :threaded, 5
 end
+
